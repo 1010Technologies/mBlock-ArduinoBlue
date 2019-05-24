@@ -1,0 +1,127 @@
+{	"extensionName": "ArduinoBlue",
+	"description": "mBlocks for the ArduinoBlue",
+	"version": "1.0.0",
+	"author": "Roger Wagner(hyperduino@1010technologies.com)",
+	"homepage": "http://hyperduino.com/",
+	"sort":0,
+	"javascriptURL":"js/ArduinoBlue.js",
+  "firmware":"1.0",
+  "extensionPort":0,
+	"blockSpecs": [
+		["h","HyperDuino","runArduino"],
+
+    ["w",
+			"ArduinoBlue setup TX %d.BT_TX RX %d.BT_RX",
+			"btSetup",
+			"A1",
+			"A0",
+			{
+				"inc":"#include <SoftwareSerial.h>\n",
+				"def":"SoftwareSerial bluetooth({0}, {1});\n",
+				"setup":"bluetooth.begin(9600);\ndelay(200);\n",
+				"work":"",
+				"loop":"" 
+			}
+		],
+
+    ["r",
+			"ArduinoBlue get button",
+			"abGetButton",
+			{
+				"inc":"#include \"ArduinoBlue.h\"\n",
+				"def":"ArduinoBlue_mBlock phone(bluetooth);\n",
+				"setup":"",
+				"work":"phone.getButton()",
+				"loop":"" 
+			}
+		],
+
+    ["r",
+			"ArduinoBlue get throttle",
+			"abGetThrottle",
+			{
+				"inc":"#include \"ArduinoBlue.h\"\n",
+				"def":"ArduinoBlue_mBlock phone(bluetooth);\n",
+				"setup":"",
+				"work":"phone.getThrottle()",
+				"loop":"" 
+			}
+		],
+
+    ["r",
+			"ArduinoBlue get steering",
+			"abGetSteering",
+			{
+				"inc":"#include \"ArduinoBlue.h\"\n",
+				"def":"ArduinoBlue_mBlock phone(bluetooth);\n",
+				"setup":"",
+				"work":"phone.getSteering()",
+				"loop":"" 
+			}
+		],
+
+    ["r",
+			"ArduinoBlue get slider ID",
+			"abGetSliderID",
+			{
+				"inc":"#include \"ArduinoBlue.h\"\n",
+				"def":"ArduinoBlue_mBlock phone(bluetooth);\n",
+				"setup":"",
+				"work":"phone.getSliderId()",
+				"loop":"" 
+			}
+		],
+
+    ["r",
+			"ArduinoBlue get slider value",
+			"abGetSliderValue",
+			{
+				"inc":"#include \"ArduinoBlue.h\"\n",
+				"def":"ArduinoBlue_mBlock phone(bluetooth);\n",
+				"setup":"",
+				"work":"phone.getSliderVal()",
+				"loop":"" 
+			}
+		],
+
+    ["r",
+			"ArduinoBlue get text",
+			"abGetText",
+			{
+				"inc":"#include \"ArduinoBlue.h\"\n",
+				"def":"ArduinoBlue_mBlock phone(bluetooth);\n",
+				"setup":"",
+				"work":"phone.getText()",
+				"loop":"" 
+			}
+		],
+
+    ["w",
+			"ArduinoBlue send text %s",
+			"abSendText",
+			"hello",
+			{
+				"inc":"#include \"ArduinoBlue.h\"\n",
+				"def":"ArduinoBlue_mBlock phone(bluetooth);\n",
+				"setup":"",
+				"work":"phone.sendText({0});\n",
+				"loop":"" 
+			}
+		]
+	],
+
+  "menus": {
+		"BT_TX": ["A0","A1","A2","A3","A4","A5",2,3,4,5,6,7,8,9,10,11,12],
+		"BT_RX": ["A0","A1","A2","A3","A4","A5",2,3,4,5,6,7,8,9,10,11,12]
+	},
+    
+  "values":{
+		"A0": 14,
+		"A1": 15,
+		"A2": 16,
+		"A3": 17,
+		"A4": 18,
+		"A5": 19
+  }
+
+}
