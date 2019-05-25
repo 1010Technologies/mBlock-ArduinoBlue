@@ -1,5 +1,5 @@
-{	"extensionName": "ArduinoBlue",
-	"description": "mBlocks for the ArduinoBlue",
+{	"extensionName": "HyperDuino ArduinoBlue",
+	"description": "mBlocks for ArduinoBlue for HyperDuino",
 	"version": "1.0.0",
 	"author": "Roger Wagner(hyperduino@1010technologies.com)",
 	"homepage": "http://hyperduino.com/",
@@ -8,7 +8,6 @@
   "firmware":"1.0",
   "extensionPort":0,
 	"blockSpecs": [
-		["h","HyperDuino","runArduino"],
 
     ["w",
 			"ArduinoBlue setup TX %d.BT_TX RX %d.BT_RX",
